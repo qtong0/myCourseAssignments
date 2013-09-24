@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Qiang Tong's Web page</title>
+	<style type="text/css">
+
+	html {
+		display: table;
+		margin: auto;
+	}
+
+	body {
+		vertical-align: middle;
+		width: 780px;
+		background-image: url("http://silviahartmann.com/background-tile-art/images/black_woven_seamless_tile.jpg");
+	}
+
+	h1 {
+		font-size: 30px;
+		margin-top: 20px;
+		margin-bottom: 0px;
+		margin-left: 20px;
+		padding-top: 20px;
+	}
+
+	h2 {
+		color: #028A02;
+		margin-left: 20px;
+	}
+
+	.coding-header-style {
+		font-family: "COURIER";
+		font-size: 13px;
+		color: #AF0606;
+		display: inline;
+		padding-left: 0;
+	}
+
+	.output-coding-style {
+		font-family: "COURIER";
+		font-size: 13px;
+		color: #555555;
+
+		padding-left: 0;
+		display: inline;
+		margin-left: 20px
+	}
+
+	#coding-tab {
+		margin-left: 60px;
+	}
+
+	#coding-include {
+		font-family: "COURIER";
+		font-size: 13px;
+		color: #A59905;
+		display: inline;
+		padding-left: 0;
+
+	}
+
+	p {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		padding-left: 20px;
+	}
+
+	#left-up-section {
+		float: left;
+		width: 60%;
+	}
+
+	#right-up-section {
+		float: right;
+		width: 40%
+	}
+
+	#left-down-section {
+		float: left;
+		width: 60%;
+	}
+
+	#right-down-section {
+		float: right;
+		width: 40%
+	}
+
+	.list-table {
+		font-size: 20px;
+		font-weight: bolder;
+		font-style: italic;
+	}
+
+	.h2-onright {
+		padding-left: 20px;
+	}
+
+	#my-cartoon-portrait {
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.logos {
+		width: 40px;
+	}
+
+	#all-contents {
+		width: 780px;
+		height: 885px;
+		background-color: #FAFAFA;
+		border-radius: 20px;
+	}
+
+	</style>
+</head>
+<body>
+	<div id = "all-contents">
+		<h1>
+			<p class = "coding-header-style">#include "</p>Qiang Tong.cpp
+			<p class = "coding-header-style">"</p>
+			<br/>
+			<p class = "coding-header-style">#include &lt;</p>
+			<p id = "coding-include">iostream</p>
+			<p class = "coding-header-style">&gt;</p>
+		</h1>
+
+		<section id = "left-up-section">
+		<h2>// Introduction</h2>
+		<p class = "output-coding-style">std::cout &lt;&lt; me-&gt;getBriefIntro() &lt;&lt; std::endl;"</p><br/>
+		<p class = "normal-p">
+			Hi there! My name is Qiang Tong, a 23 year old software programer, gamer, also a graduate student of Computer Science at <a href="http://www.stevens.edu" target = "_blank">Stevens Institute of Technology</a> in Hoboken, NJ.
+			<br/>
+			The courses I am taking or have taken in Stevens:
+		</p>
+		<p class = "output-coding-style">for (int i = 0; i != me-&gt;allcourses.length(); i++)</p>
+		<p class = "output-coding-style" id = "coding-tab">std::cout &lt;&lt; allcourses[i] &lt;&lt; std::endl;</p>
+		<p>
+			<ul type = 'circle'>
+				<li>CS-513 Knowledge Discovery &amp; Data Mining</li>
+				<li>CS-561 Database Management System I</li>
+				<li>CS-562 Database Management System II</li>
+				<li>CS-521 TCP/IP Networking</li>
+				<li>CS-524 Introduction to Cloud Computing</li>
+				<li>CS-573 Fundamentals of CyberSecurity</li>
+				<li>BIA-660 Web Analytics</li>
+				<li>CS-546 Web Programming</li>
+			</ul>
+			<p class = "output-coding-style">me-&gt;printCurGoal();</p>
+			<p>Now, I tend to focus more on areas of Computer Network &amp; Database.</p>
+		</p>
+		</section>
+
+		<section id = "right-up-section">
+			<h2 class = "h2-onright">// My Photo:</h2>
+			<p class = "output-coding-style" id = "coding-tab">me->getPhoto();</p>
+			<img id = "my-cartoon-portrait" src="http://farm4.staticflickr.com/3751/9823996125_28ae9ed117_o.png" alt = "my cartoon portrait" />
+		</section>
+		
+		<section id = "left-down-section">
+			<h2>// Programming Languages I know</h2>
+			<p class = "output-coding-style">for (int i = 0; i != me-&gt;myPLanguages.length(); i++)</p>
+			<p class = "output-coding-style" id = "coding-tab">std::cout &lt;&lt; myPLanguages[i] + ", ";</p>
+			<p>C, C++, Java, SQL, Python, PHP, HTML, Javascript</p>
+			<h2>// Contact information</h2>
+			<p class = "output-coding-style">me-&gt;printAllCnts();</p>
+			<p>
+				Email: <a id = "email" target = "_blank" 
+				onclick = "return confirm('Are you sure to leave this page and compose an email?')"
+				href = "mailto:tongqiang.atp@gmail.com">tongqiang.atp@gmail.com</a>
+				<br/>
+				Email: <a id = "email" target = "_blank" 
+				onclick = "return confirm('Are you sure to leave this page and compose an email?')"
+				href = "mailto:qtong1@stevens.edu">qtong1@stevens.edu</a>
+				<br/>
+				<a href="http://www.facebook.com/michaelt89" target = "_blank"><img class = "logos" src="http://www.instituteforenergyresearch.org/wp-content/uploads/2013/02/Facebook-square-logo-alpha.png" alt = "Facebook Logo"/></a>
+
+				<a href="http://twitter.com/Hot___Potato" target = "_blank"><img class = "logos" src="http://www.techshop.ws/images/Twitter.png" alt = "Twitter Logo"/></a>
+
+				<a href="http://www.linkedin.com/pub/qiang-tong/17/a1a/a31" target = "_blank"><img class = "logos" src="http://afmarcom.com/blog/wp-content/uploads/2012/02/linkedin-512px1.png" alt = "Linkedin Logo" /></a>
+			</p>
+		</section>
+
+		<section id = "right-down-section">
+			<h2 class>// Hobbies</h2>
+			<p class = "output-coding-style">me-&gt;getAllHobbies();</p>
+			<p>Basketball, Music, Movies, Video Games</p>
+			<h2 class>// List and Table</h2>
+			<p class = "output-coding-style">me-&gt;get_other_assignments()</p>
+			<br/>
+			<p><a class = "list-table" href="./list.html" target = "_blank" alt = "the List">The List!</a></p>
+			<p><a class = "list-table" href="./table.html" target = "_blank" alt = "the table">The Table!</a></p>
+		</section>
+	</div>
+</body>
+</html>

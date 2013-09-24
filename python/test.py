@@ -1,0 +1,22 @@
+import QTong2
+
+if __name__ == '__main__':
+	print QTong2.parse_email('me@google.com')
+	print QTong2.parse_email('ME@YAHOO.COM')
+	print QTong2.parse_email('WINTER.MASON@YAHOO.COM')
+	print QTong2.parse_email('winter.mason@yahoo.com')
+	print QTong2.parse_email('this is a test me@example.com')
+	print QTong2.parse_email('this is a harder test me@example.com.')
+	print QTong2.parse_email('An email in context me@example.com is hard.')
+	print QTong2.parse_email('alpha123@google.com')
+	print QTong2.parse_email('alpha.123@google.com')
+	print QTong2.parse_email('123@google.com')
+	print QTong2.parse_email('under_score@mail.edu')
+	print QTong2.parse_email('h@bit.ly')
+	print QTong2.parse_email('oddly+@mail.com')
+	print QTong2.parse_email('@twitter handle')
+	print QTong2.parse_email('not.valid@domain')
+	print QTong2.parse_email('domain@valid.butnotreally')
+	print QTong2.parse_email('This&isn\'t@right.com')
+	print QTong2.parse_email('not=valid@domain.com')
+	print QTong2.parse_email('also@not@valid@domain.com')

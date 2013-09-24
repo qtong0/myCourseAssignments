@@ -1,0 +1,506 @@
+<!--
+BIA-660 Assignment #3
+Author: Qiang Tong
+email: 	qtong1@stevens.edu
+		tongqiang.atp@gmail.com
+
+README:
+The content of this webpage is from Syllabus in Stevens' Moodle.
+This HTML page has images referenced from internet, so it is better to view it with internet connected.
+The javascript/jQuery part of this HTML is to edit the "Detailed Schedule" table. You can click on the table content to edit. When finished editing, just click somewhere else to finish editing.
+-->
+
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title>BIA-660 Introduction</title>
+	<style type="text/css">
+		html {
+			display: table;
+			margin: auto;
+		}
+		
+		body {
+			display: table-cell;
+			vertical-align: middle;
+			width: 980px;
+			background: url("http://www.freecsstemplates.org/previews/mongoose/images/bg.jpg");
+			background-color: #F3F3F3;
+		}
+		
+		#center-page {
+			margin: 0 auto;
+
+			background-color: #F3F3F3;
+			width: 100%;
+			border-top: 15px solid #c3c3c3;
+			margin-bottom: 30px;
+			border-radius: 0 0 10px 10px;
+		}
+
+		h1, h2, h3, h4, h5, h6, p, ul, li {
+			padding-right: 40px;
+			padding-left: 40px;
+		}
+
+		h1 {
+			padding-top: 00px;
+
+			text-align: center;
+			font-family: 'Adelle W01 Bold', 'Arvo', 'Constantia', "Lucida Bright", 'Lucidabright', "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+			font-size: 46;
+		}
+
+		#class-time {
+			font-family: 'Adelle W01 Bold', 'Arvo', 'Constantia', "Lucida Bright", 'Lucidabright', "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+			font-size: 20px;
+			padding-left: 120px;
+			text-align: left;
+			float: left;
+		}
+
+		#professor-link {
+			font-size: 20px;
+			padding-right: 120px;
+			text-align: right;
+			float: right;
+		}
+		
+		hr {
+			border: 1px;
+			clear: both;
+			height: 1px;
+		}
+
+		#left-part-div {
+			width: 50%;
+			float: left;
+		}
+
+		#right-part-div {
+			width: 50%;
+			float: right;
+		}
+		
+		#table-title {
+			text-align: left;
+			border-top-width: 15px;
+		}
+
+		h3 { 
+			font-family: 'Adelle W01 Bold', 'Arvo', 'Constantia', "Lucida Bright", 'Lucidabright', "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+			font-weight: bold;
+			letter-spacing: 1px;
+			margin-bottom: 10px; 
+		}
+
+		a {
+			text-decoration: none;
+			color: #424242;
+		}
+
+		a:link, a:visited, a:active {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		p, li {
+			line-height: 150%;
+			font-family: 'verdana';
+			color: black;
+			margin: 0;
+			font-size: 14px;
+			color: #424242;
+		}
+
+
+		/*I use Minimalist styles for table*/
+		table {
+			border-collapse: collapse;
+			width: 90%;
+			margin: 0px auto;
+			table-layout: fixed;
+		}
+
+		th {
+			font-size: 14px;
+			color: #039;
+			padding: 10px 8px;
+			border-bottom: 2px solid #6678b1;
+		}
+
+		td {
+			font-family: 'verdana';
+			color: black;
+			margin: 0;
+			font-size: 12px;
+
+			color: #669;
+			padding: 9px 8px 0px 8px;
+		}
+
+		#col-width0 {
+			width: 50;
+		}
+
+		#col-width1 {
+			width: 200;
+		}
+
+		#col-width2 {
+			width: 200;
+		}
+
+		#col-width3 {
+			width: 150;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#top-background {
+			background-image: url("http://www.stevens.edu/sit/profiles/sit/themes/sit_default/css/images/zone-branding.jpg");
+			right: -100px;
+			background-repeat: no-repeat;
+			background-position: right -240px;
+			background-color: #F3F3F3;
+			box-shadow: 0px 5px 3px #666666;
+			height: 166px;
+			margin-top: 20px;
+			border-radius: 10px 10px 0 0; 
+		}
+
+		#inner-background {
+			background-image: url("http://www.stevens.edu/sit/profiles/sit/themes/sit_default/css/images/region-branding.png");
+			background-repeat: no-repeat;
+			background-position: 380px -250px;
+		}
+
+		#stevens-logo-image {
+			width: 390px;
+			background-color: white;
+			padding-left: 10px;
+			border-radius: 10px 0 0 0;
+		}
+
+		.box {
+			width: 980px;
+			vertical-align: middle;
+			position: fixed;
+			bottom: 0;
+		}
+
+		.scrollup {
+			border-radius: 10px;
+			opacity: 0.8;
+			z-index: 99;
+			float: right;
+			position: relative;
+			right: -30;
+			bottom: 20;
+		}
+
+	</style>
+</head>
+<a name = "top"></a>
+<body>
+	<div id="top-background">
+		<div id = "inner-background">
+			<a href="http://www.stevens.edu/sit/" alt = "Stevens logo" target="_blank">
+				<img id = "stevens-logo-image" src="http://www.stevens.edu/sit/profiles/sit/themes/sit_default/logo.png"
+				alt="Stevens Logo">
+			</a>
+		</div>
+	</div>
+	<div id="center-page">
+		
+		<h1>BIA-660 Web Analytics</h1>
+		<h2 id="class-time">Tuesdays, 6:15-8:46pm, P 116</h2>
+		<h2 id = "professor-link">
+			<a href="http://www.stevens.edu/news/content/winter-mason"
+			alt = 'profs in website in stevens' target="_blank">
+				Professor Winter Mason
+			</a>
+		</h2>
+		<hr/>
+		
+		<div id = "left-part-div">
+			<h3>Course Description:</h3>
+			<p>
+				In this course, students will learn through hands-on experience how to extract data from the web and analyze web-scale data using distributed computing.  Students will learn different analysis methods that are widely used across the range of internet companies, from start-ups to online giants like Amazon or Google.  At the end of the course, students will apply these methods to answer a real scientific question or to create a useful web application.
+			</p>
+
+			<h3>Prerequisites:</h3>
+			<p>
+				Students must have programming experience. It is also highly recommended for the students to have taken Multivariate Data Analytics (BIA 652), Knowledge Discovery in Databases (MIS 637) and Statistical Learning &amp; Analytics (BIA 656).
+			</p>
+		</div>
+		
+		<div id = "right-part-div">
+			<h3>Grading Percentages:</h3>
+			<p>
+				Class work: 20%; Mid-term Project: 30%; Final Project: 50%
+				<br/>
+				<strong>Mid-term project:</strong>
+				<br/>
+					Develop a solution to a web analytics problem, to be explained in class.  This will require collecting and cleaning data and doing some analyses to present the results.
+				<br/>
+				<strong>Final project:</strong>
+				<ul>
+					<li>
+						<i>Option 1:</i> Choose a scientific question from a relevant literature and write a report describing findings, to be submitted to a scientific journal or conference.
+					</li>
+					<li>
+						<i>Option 2:</i> Combine data sources from the web to generate a useful and interesting web application, to be published online.
+					</li>
+				</ul>
+			</p>
+
+			<h3>Textbook(s) or References:</h3>
+			<p>
+				<a href="http://www.amazon.com/Programming-Collective-Intelligence-Building-Applications/dp/0596529325/"
+				alt = "textbook amazon link" target="_blank">
+				Programming Collective Intelligence: Building Smart Web 2.0 Applications</a>
+			</p>
+		</div>
+		<hr/>
+		<br>
+
+		<h3 id = "table-title">Detailed Schedule(Editable):</h3>
+		<p>
+			<table>
+				<tr>
+					<th id = "col-width0"></th>
+					<th id = "col-width1">Topic(s)</th>
+					<th id = "col-width2">Reading(s)</th>
+					<th id = "col-width3">Homework</th>
+				</tr>
+				<tr>
+					<td>8/27</td>
+					<td>
+						Introduction to the course 
+						<br/>
+						Introduction to Python
+					</td>
+					<td>
+						Dive Into Python, Chapter 5-6
+						<br/>
+						CheckIO, problems 4-6
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>9/3</td>
+					<td>
+						Diving into Python
+						<br/>
+						In-class Python exercises
+					</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>9/10</td>
+					<td>
+						XML, HTML, CSS
+						<br/>
+						Javascript, JSON
+						<br/>
+						In-class web-page exercises
+					</td>
+					<td>
+						Ch. 4 in Programming Collective IQ
+						<br/>
+						Dive Into Python, Chapter 8 &amp; 11
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>9/17</td>
+					<td>
+						Obtaining Data:
+						<br/>
+						Scraping Web Data
+						<br/>
+						Web Crawlers
+						<br/>
+						APIs	
+						<br/>
+						Introduce mid-term projects 
+					</td>
+					<td>Dive Into Python, Chapter 7</td>
+					<td>Decide coordination plan with team</td>
+				</tr>
+				<tr>
+					<td>9/24</td>
+					<td>
+						Databases
+						<br/>
+						Data cleaning
+						<br/>
+						Regex 
+						<br/>
+						Basic data analysis
+					</td>
+					<td>Visual display of quantitative information, Ch. 2 &amp; 4</td>
+					<td>Work on mid-term project</td>
+				</tr>
+				<tr>
+					<td>10/1</td>
+					<td>
+						<i>
+						Visualizing data for exploration
+						<br/>
+						Google AppEngine &amp; AppEngine Data Store
+						</i>
+					</td>
+					<td></td>
+					<td>Prepare presentation</td>
+				</tr>
+				<tr>
+					<td>10/8</td>
+					<td><strong>Presentation of Mid-Term Project Results</strong></td>
+					<td><i>Chapter 2,3,5,6 in Hadoop: The Definitive Guide</i></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>10/22</td>
+					<td>
+						Cloud computing:
+						<br/>
+						Map Reduce
+						<br/>
+						Hadoop
+						<br/>
+						Amazon AWS
+						<br/>
+						Word count example
+					</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>10/29</td>
+					<td>
+						Cloud computing:
+						<br/>
+						Streaming Algorithms 
+						<br/>
+						PIG
+						<br/>
+						BFS example
+					</td>
+					<td>
+						<i>
+						Visual display of quantitative information, Ch. 5 &amp; 9
+						<br/>
+						Visualize This
+						</i>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>11/5</td>
+					<td>
+						Final Project Introductions
+						<br/>
+						Visualizing data for exposition
+						<br/>
+						d3, bootstrap, processing
+					</td>
+					<td>
+						Ch. 3 in Programming Collective IQ
+						<br/>
+						Newman (2001)
+					</td>
+					<td>Decide coordination plan with team</td>
+				</tr>
+				<tr>
+					<td>11/12</td>
+					<td>Social Network Analysis</td>
+					<td>Ch. 6 in Programming Collective IQ</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>11/19</td>
+					<td>
+						Text Mining
+						<br/>
+						Topic Modeling
+					</td>
+					<td>Ch. 7 &amp; 9 in Programming Collective Intelligence</td>
+					<td>Begin work on Final project</td>
+				</tr>
+				<tr>
+					<td>11/26</td>
+					<td>Statistical Learning / Classification</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>12/3</td>
+					<td>
+						<strong>Final Project Presentations</strong>
+					</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<div class = "box">
+				<div class = "scrollup" title = "To the top of this page.">
+					<a href='#top'>
+						<img src="http://www.woodmill.co.uk/woodmillimages/tothetop.png" alt="to the top icon">
+					</a>
+				</div>
+			</div>
+		</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script value = "text/Javascript">
+
+		$('td').bind('click', myFunc);
+
+		function myFunc()
+		{
+			var selectedTd = $(this);
+			var tdWidth = selectedTd.width();
+//			alert(tdWidth);
+			selectedTd.addClass("cellEditing");
+				var selectedStr = "";
+//				selectedStr = selectedTd.text();
+				selectedStr = selectedTd.html();
+				selectedStr = selectedStr.trim();
+				selectedStr = selectedStr.replace(/\s\s+/g, '\n');
+				selectedStr = selectedStr.replace(/<br>/g, '\n');
+				selectedStr = selectedStr.replace(/\n+/g, '\n');
+//				selectedStr = selectedStr.replace(/(<br>)+/g, '\n');
+//				alert(selectedStr);
+				selectedTd.html($('<textarea id = "mytextarea" style = \" width : ' + tdWidth + 'px \"">' + selectedStr + '</textarea>'));
+				selectedTd.children().first().focus();
+				var mytextarea = $('#mytextarea');
+				selectedTd.unbind('click');
+				var returnStr = "";
+				var tmpStr = "";
+				mytextarea.blur(function(){
+					tmpStr = mytextarea.val();
+					tmpStr = tmpStr.replace(/\n/g, '<br>');
+//					alert(tmpStr);
+					returnStr = tmpStr;
+					mytextarea.hide();
+					selectedTd.html(returnStr);
+					selectedTd.bind('click', myFunc);
+				});
+		}
+
+		</script>
+	</div>
+</body>
+</html>
